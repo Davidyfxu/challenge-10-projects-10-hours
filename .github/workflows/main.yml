@@ -16,28 +16,14 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   build-and-deploy:
-
     runs-on: ubuntu-latest
-
     steps:
-
-      - name: checkout
-
-        uses: actions/checkout@master
-
-        # 安装依赖
-
-      - name: install
-
-        run: yarn
-
-        # 打包构建
-
-      - name: build
-
-        run: yarn build:test
-
-        # 部署运行
+    - name: checkout
+      uses: actions/checkout@master
+    - name:install
+      run: yarn
+    - name: build
+      run:yarn build:test
 
       - name: Deploy
 
